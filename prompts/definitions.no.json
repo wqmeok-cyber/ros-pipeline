@@ -1,0 +1,36 @@
+{
+  "language": "no",
+  "terms": {
+    "ROS-analyse": "ROS (Risiko- og sårbarhetsanalyse) er en systematisk metode for å identifisere uønskede hendelser, vurdere sannsynlighet og konsekvens, beregne risiko og foreslå tiltak. Malen bygger på anbefalinger fra DSBs veiledere for helhetlig ROS og planarbeid.",
+    "tiltaksanalyse": "En tiltaksanalyse beskriver og vurderer mulige tiltak for å redusere identifisert risiko, med ansvar, prioritet, kost/nytte og frister. Den kobles til funn i ROS‑analysen og brukes til oppfølging."
+  },
+  "style_guidance": [
+    "Skriv på norsk (bokmål).",
+    "Vær presis, etterprøvbar og kortfattet i konklusjoner.",
+    "Bruk sporbarhet: henvis til hvilke funn/forutsetninger som ligger bak hvert tiltak.",
+    "Inkluder usikkerhet og forutsetninger eksplisitt."
+  ],
+  "risk_matrix": {
+    "likelihood_levels": [
+      "Svært lav (1)",
+      "Lav (2)",
+      "Moderat (3)",
+      "Høy (4)",
+      "Svært høy (5)"
+    ],
+    "consequence_types": [
+      "Liv og helse",
+      "Stabilitet/drift",
+      "Materielle verdier",
+      "Omdømme",
+      "Miljø"
+    ],
+    "consequence_levels": [
+      "Ubetydelig (1)",
+      "Liten (2)",
+      "Moderat (3)",
+      "Alvorlig (4)",
+      "Kritisk (5)"
+    ]
+  }
+}

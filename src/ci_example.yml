@@ -1,0 +1,30 @@
+# Example GitHub Actions workflow
+name: Generate ROS
+on:
+  workflow_dispatch:
+    inputs:
+      tiltak_file:
+        description: 'Path under data/ to your tiltaksanalyse file'
+        default: 'tiltaksanalyse.sample.no.md'
+        required: true
+      template_file:
+        description: 'Path under templates/ to your ROS template'
+        default: 'ros_template.no.md'
+        required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python src/ros_gen.py             --tiltak data/${{ github.event.inputs.tiltak_file }}             --template templates/${{ github.event.inputs.template_file }}             --out out/ROS-rapport.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ros-rapport
+          path: out/ROS-rapport.md
